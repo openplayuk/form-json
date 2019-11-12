@@ -1,4 +1,8 @@
-<?php namespace AdamWathan\Form\Elements;
+<?php 
+
+namespace AdamWathan\Form\Elements;
+
+use Illuminate\Support\Str;
 
 class Label extends Element
 {
@@ -34,7 +38,7 @@ class Label extends Element
 
     public function forId($name)
     {
-        $this->setAttribute('for', str_slug($name));
+        $this->setAttribute('for', Str::slug($name));
         return $this;
     }
 
