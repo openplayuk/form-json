@@ -255,7 +255,7 @@ class FormBuilder
 
     protected function getOldInput($name)
     {
-        return $this->escape($this->oldInput->getOldInput($name));
+        return $this->oldInput->getOldInput($name);
     }
 
     protected function hasModelValue($name)
@@ -301,15 +301,7 @@ class FormBuilder
     protected function getModelValue($name)
     {
 
-        return $this->escape($this->checkForJSON($name));
-    }
-
-    protected function escape($value)
-    {
-        if (!is_string($value)) {
-            return $value;
-        }
-        return htmlentities($value, ENT_QUOTES, 'UTF-8');
+        return $this->checkForJSON($name);
     }
 
     protected function unbindModel()

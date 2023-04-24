@@ -89,11 +89,17 @@ abstract class Element
         return $this->render();
     }
 
+    protected function escape($value)
+    {
+        return htmlentities($value, ENT_QUOTES, 'UTF-8');
+    }
+
     protected function renderAttributes()
     {
         $result = '';
 
         foreach ($this->attributes as $attribute => $value) {
+            $value = $this->escape($value);
             $result .= " {$attribute}=\"{$value}\"";
         }
 
