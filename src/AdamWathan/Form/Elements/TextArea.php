@@ -16,7 +16,7 @@ class TextArea extends FormControl
         $result = '<textarea';
         $result .= $this->renderAttributes();
         $result .= '>';
-        $result .= $this->value;
+        $result .= $this->escape($this->value);
         $result .= '</textarea>';
 
         return $result;

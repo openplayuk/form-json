@@ -68,10 +68,10 @@ class Select extends FormControl
     protected function renderOption($value, $label)
     {
         $option = '<option ';
-        $option .= 'value="' . $value . '"';
+        $option .= 'value="' . $this->escape($value) . '"';
         $option .= $this->isSelected($value) ? ' selected' : '';
         $option .= '>';
-        $option .= $label;
+        $option .= $this->escape($label);
         $option .= '</option>';
         return $option;
     }
