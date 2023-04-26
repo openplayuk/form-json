@@ -22,13 +22,13 @@ class Label extends Element
         $result .= '>';
 
         if ($this->labelBefore) {
-            $result .= $this->escape($this->label);
+            $result .= $this->label;
         }
 
         $result .= $this->renderElement();
 
         if (! $this->labelBefore) {
-            $result .= $this->escape($this->label);
+            $result .= $this->label;
         }
 
         $result .= '</label>';
